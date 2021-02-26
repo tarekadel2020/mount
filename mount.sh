@@ -1,6 +1,9 @@
 #!/bin/bash
 
 
+## that script tested on arch linux
+## Powered BY : Tarek adel       Date: 26-02-2021
+
 
 mountusb(){
 	selected=$(lsblk -rno size,name,mountpoint $usbdrives | awk '($1!~"M" && $1!~"K") {printf "%s%8s%12s\n", $2, $1, $3}' | dmenu -l 5 -i -p "USB Drivers: " | awk '{print $1}')
